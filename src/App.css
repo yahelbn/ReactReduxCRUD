@@ -1,3 +1,8 @@
+body {
+  background-color: #dcd9c6;
+  font-family: "Encode Sans Expanded", sans-serif;
+}
+
 .App {
   text-align: center;
 }
