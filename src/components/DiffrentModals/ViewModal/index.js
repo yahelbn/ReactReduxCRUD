@@ -3,7 +3,6 @@ import React from "react";
 import { connect } from "react-redux";
 import viewimage from "../../../images/viewimage.svg";
 import {
-  //FormButton,
   Column,
   HeaderService,
   SubHeaderService,

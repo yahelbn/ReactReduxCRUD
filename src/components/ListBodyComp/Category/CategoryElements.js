@@ -33,6 +33,6 @@ export const IconCheckDiv = styled.div`
   visibility: ${({ pressed }) => (pressed ? `visible` : `hidden`)};
   transition: ${({ pressed }) =>
     pressed
-      ? ` opacity 2s linear`
-      : `visibility 0s 0.2s, opacity 0.2s linear`}; ;
+      ? ` opacity 0.5s linear`
+      : `visibility 0s 0.5s, opacity 0.5s linear`}; ;
 `;

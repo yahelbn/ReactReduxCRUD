@@ -8,6 +8,8 @@ export const ToolbarContainer = styled.div`
 `;
 
 export const ToolbarHeader = styled.h1`
+  margin-top: 50px;
+  margin-bottom: 35px;
   color: gray;
   text-shadow: 2px 2px 4px #000000;
   letter-spacing: 0.2rem;
@@ -45,7 +47,8 @@ export const ToolbarErrorMessageText = styled.div`
 `;
 
 export const ToolbarInput = styled.input`
-  padding: 5px 5px;
+  padding: 6px;
+  padding-right: 20px;
   margin-bottom: 15px;
   border: none;
   border-radius: 4px;
