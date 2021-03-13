@@ -33,6 +33,7 @@ export const ToolbarButtonAction = styled.button``;
 
 export const ToolbarText = styled.span`
   margin-top: 20px;
+  text-align: center;
 `;
 
 export const ToolbarErrorMessageText = styled.div`
