@@ -8,7 +8,6 @@ export const ToolbarContainer = styled.div`
 `;
 
 export const ToolbarHeader = styled.h1`
-  margin-top: 50px;
   margin-bottom: 35px;
   color: gray;
   text-shadow: 2px 2px 4px #000000;
