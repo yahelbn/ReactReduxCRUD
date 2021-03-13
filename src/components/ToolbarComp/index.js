@@ -28,6 +28,10 @@ function Toolbar(props) {
 
   function handleView() {
     setChoseModal(<ViewModal category={props.name} />);
+    props.dispatch({
+      type: "CLICK_CATEGORY",
+      name: undefined,
+    });
     toggle();
   }
 
