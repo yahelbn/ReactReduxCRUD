@@ -32,8 +32,6 @@ export const Row = styled.div`
   align-items: center;
   flex-direction: row;
   text-align: center;
-
-  direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
 `;
 
 export const Column = styled.div`
@@ -41,32 +39,51 @@ export const Column = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  direction: ${({ rtl }) => (rtl ? "rtl" : "ltr")};
 `;
 
 export const ImgWrap = styled.div`
-  max-width: 280px;
-  height: 60%;
-  margin-bottom: 35px;
-  margin-left: 15px;
+  max-width: 230px;
+  height: 50%;
+  margin-top: 10px;
 `;
 
 export const Img = styled.img`
   width: 70%;
-  // margin: 0 0 10px 0;
+
   padding-right: 0;
 `;
 
 export const HeaderService = styled.h2`
-  padding-bottom: 15px;
   @media screen and (max-width: 550px) {
     font-size: 1rem;
   }
 `;
 
 export const SubHeaderService = styled.h4`
-  margin-bottom: 30px;
+  margin: 18px 0;
   @media screen and (max-width: 550px) {
     font-size: 0.8rem;
   }
+`;
+
+export const MapWrapper = styled.div`
+  width: 60vh;
+  height: 17vh;
+  @media screen and (max-width: 550px) {
+    width: 40vh;
+  }
+`;
+
+export const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+`;
+
+export const TextMark = styled.span`
+  color: black;
+  font-weight: bold;
+  margin-bottom: 3px;
+  width: fit-content;
 `;

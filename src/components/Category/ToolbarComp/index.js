@@ -14,11 +14,15 @@ import {
 } from "./ToolbarCompElements";
 import { connect } from "react-redux";
 import { BsPlus } from "react-icons/bs";
-import "../DiffrentModals/Modal/Modal.css";
-import Modal from "../DiffrentModals/Modal/Modal";
-import useModal from "../DiffrentModals/Modal/useModal";
-import EditModal from "../DiffrentModals/EditModal/index";
-import ViewModal from "../DiffrentModals/ViewModal";
+import "../../DiffrentModals/Modal/Modal.css";
+import Modal from "../../DiffrentModals/Modal/Modal";
+import useModal from "../../DiffrentModals/Modal/useModal";
+import EditModal from "../../DiffrentModals/CategoryModals/EditModal";
+import ViewModal from "../../DiffrentModals/CategoryModals/ViewModal";
+
+/* Icons imports*/
+import { AiOutlineEye, AiOutlineEdit } from "react-icons/ai";
+import { BiTrash } from "react-icons/bi";
 
 function Toolbar(props) {
   const [inputCategory, setInputCategory] = useState(null);
@@ -26,8 +30,38 @@ function Toolbar(props) {
   const [choseModal, setChoseModal] = useState(undefined);
   const [errorMessage, setErrorMessage] = useState(undefined);
 
+  function addHandle() {
+    if (inputCategory) {
+      props.dispatch({
+        type: "ADD_CATEGORY",
+        name: inputCategory,
+      });
+      props.dispatch({
+        type: "CLICK_CATEGORY",
+        name: undefined,
+      });
+      setErrorMessage(undefined);
+    } else {
+      setErrorMessage("You must enter some name of category!");
+    }
+  }
+  function deleteHandle() {
+    props.dispatch({
+      type: "DELETE_CATEGORY",
+      name: props.name,
+    });
+    props.dispatch({
+      type: "CLICK_CATEGORY",
+      name: undefined,
+    });
+  }
+
   function handleView() {
     setChoseModal(<ViewModal category={props.name} />);
+    props.dispatch({
+      type: "CLICK_CATEGORY",
+      name: undefined,
+    });
     toggle();
   }
 
@@ -53,19 +87,7 @@ function Toolbar(props) {
             ></ToolbarInput>
             <ToolbarButton
               onClick={() => {
-                if (inputCategory) {
-                  props.dispatch({
-                    type: "ADD_CATEGORY",
-                    name: inputCategory,
-                  });
-                  props.dispatch({
-                    type: "CLICK_CATEGORY",
-                    name: undefined,
-                  });
-                  setErrorMessage(undefined);
-                } else {
-                  setErrorMessage("You must enter some name of category!");
-                }
+                addHandle();
               }}
             >
               <Row>
@@ -88,27 +110,23 @@ function Toolbar(props) {
           {props.name ? (
             <ToolbarActionButton onClick={() => handleEdit()}>
               edit
+              <AiOutlineEdit />
             </ToolbarActionButton>
           ) : null}
           {props.name ? (
             <ToolbarActionButton onClick={() => handleView()}>
               view
+              <AiOutlineEye />
             </ToolbarActionButton>
           ) : null}
           {props.name ? (
             <ToolbarActionButton
               onClick={() => {
-                props.dispatch({
-                  type: "DELETE_CATEGORY",
-                  name: props.name,
-                });
-                props.dispatch({
-                  type: "CLICK_CATEGORY",
-                  name: undefined,
-                });
+                deleteHandle();
               }}
             >
               delete
+              <BiTrash />
             </ToolbarActionButton>
           ) : null}
         </ToolbarButtonRow>

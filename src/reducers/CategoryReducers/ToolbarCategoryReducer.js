@@ -1,4 +1,4 @@
-export default function ToolbarReducer(
+export default function ToolbarCategoryReducer(
   state = localStorage.getItem("categories")
     ? JSON.parse(localStorage.getItem("categories"))
     : [],

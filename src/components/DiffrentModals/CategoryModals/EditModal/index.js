@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { connect } from "react-redux";
-import editimage from "../../../images/editimage.svg";
+import editimage from "../../../../images/editimage.svg";
 
 import {
   FormButton,

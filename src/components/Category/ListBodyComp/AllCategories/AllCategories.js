@@ -19,7 +19,7 @@ function AllCategories(props) {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.ToolbarReducer,
+    categories: state.ToolbarCategoryReducer,
     name: state.ShowToolbar.name,
   };
 };

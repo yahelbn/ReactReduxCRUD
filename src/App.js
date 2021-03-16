@@ -1,13 +1,25 @@
 import "./App.css";
-import Toolbar from "./components/ToolbarComp/index";
-import AllCategories from "./components/ListBodyComp/AllCategories/AllCategories";
-function App() {
+
+/* Import Components */
+import CategoryView from "./components/Category/CategoryView/index";
+import LocationView from "./components/Location/LocationView/index";
+import FooterComp from "./components/FooterComp/index";
+
+import { connect } from "react-redux";
+
+function App(props) {
   return (
     <div className="App">
-      <Toolbar />
-      <AllCategories />
+      {props.categoriesselected ? <CategoryView /> : <LocationView />}
+      <FooterComp />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    categoriesselected: state.SelectOptionReducer.categoriesselected,
+  };
+};
+
+export default connect(mapStateToProps)(App);
