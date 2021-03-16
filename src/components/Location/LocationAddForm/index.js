@@ -112,7 +112,7 @@ function LocationAddForm(props) {
 
   async function getAddress() {
     const data = await axios.get(
-      `http://open.mapquestapi.com/geocoding/v1/reverse?location=${lat},${lng}&includeRoadMetadata=true&includeNearestIntersection=true`,
+      `https://open.mapquestapi.com/geocoding/v1/reverse?location=${lat},${lng}&includeRoadMetadata=true&includeNearestIntersection=true`,
       {
         params: {
           //Some cors problem by using this key from .env
